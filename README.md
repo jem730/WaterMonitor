@@ -13,3 +13,6 @@ https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_r
 
 Heltec Development Board Datasheet: 
 https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA_V3(Rev1.1).pdf
+
+Built-in OLED Display Font Generator: 
+https://oleddisplay.squix.ch/
