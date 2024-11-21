@@ -8,5 +8,8 @@ A secondary goal is to adapt the system for tide and wave tracking, enabling it 
 ESP32-S3FN8 MCU Datasheet:
 https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf
 
+ESP32-S3 MCU Reference Manual:
+https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf
+
 Heltec Development Board Datasheet: 
 https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA_V3(Rev1.1).pdf
