@@ -10,6 +10,3 @@ https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_e
 
 Heltec Development Board Datasheet: 
 https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA_V3(Rev1.1).pdf
-
-RCWL-1670 Datasheet:
-https://docs.cirkitdesigner.com/component/5ab1de70-39f4-4765-88f6-9fc2ba7f3345/rcwl-1670-ultrasonic-sensor
