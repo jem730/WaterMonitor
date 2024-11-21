@@ -4,6 +4,9 @@ A secondary goal is to adapt the system for tide and wave tracking, enabling it 
 
 ![image](https://github.com/user-attachments/assets/d556eb2f-8c26-49ae-8807-d0ea97859ae5)
 
+![image](https://github.com/user-attachments/assets/cc3e18db-c270-4d96-98d3-85bc43db3a98)
+
+
 
 ESP32-S3FN8 MCU Datasheet:
 https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf
