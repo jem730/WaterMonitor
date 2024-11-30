@@ -1,0 +1,38 @@
+#include <Wire.h>
+
+// I2C Slave Address (must match the sender address on STM32)
+#define SLAVE_ADDRESS 0x3C
+
+// Variable to store received data
+volatile uint8_t receivedNumber = 0;
+volatile bool dataReceived = false; // Flag to track if new data has been received
+
+void setup() {
+    Serial.begin(115200); // Initialize serial communication
+
+    // Initialize the secondary I2C channel as a slave
+    Wire.begin(19, 20); // SDA = GPIO19, SCL = GPIO20
+    Wire.setClock(400000); // Set I2C clock speed to 400 kHz
+    Wire.onReceive(receiveEvent); // Register callback for data reception
+
+    Serial.println("ESP32 I2C Slave Ready");
+}
+
+void loop() {
+    if (dataReceived) { // Check if new data has been received
+        Serial.print("Received Number: ");
+        Serial.println(receivedNumber);
+        dataReceived = false; // Reset the flag after processing the data
+    }
+
+    // Delay to avoid spamming the serial monitor
+    delay(100);
+}
+
+// Callback function for when data is received over I2C
+void receiveEvent(int howMany) {
+    if (Wire.available()) {
+        receivedNumber = Wire.read(); // Read the first byte sent by the STM32
+        dataReceived = true; // Set the flag to indicate new data has been received
+    }
+}
