@@ -98,23 +98,18 @@ void I2C_SendNumber(uint8_t number) {
     I2C1->CR2 &= ~I2C_CR2_RD_WRN;           // Write mode
     I2C1->CR2 |= I2C_CR2_START;             // Generate START condition
 
-    // Wait for TXIS flag (ready to transmit) or NACK
-    while (!(I2C1->ISR & (I2C_ISR_TXIS | I2C_ISR_NACKF))) {
-        if (I2C1->ISR & I2C_ISR_NACKF) {
-            // Handle NACK error
-            I2C1->ICR = I2C_ICR_NACKCF; // Clear NACK flag
-            return; // Exit function
-        }
-    }
-
-    // Send the data byte
-    I2C1->TXDR = number;
+    
+    while (!(I2C1->ISR & I2C_ISR_TXIS)); // Wait for TXIS flag
+    I2C1->TXDR = number; // Send data byte
+    while (!(I2C1->ISR & I2C_ISR_TC)); // Wait until transfer complete
+}
+    
 
     // Wait for the STOP condition to be generated
-    while (!(I2C1->ISR & I2C_ISR_STOPF));
+   // while (!(I2C1->ISR & I2C_ISR_STOPF));
 
     // Clear the STOP condition flag
-    I2C1->ICR = I2C_ICR_STOPCF;
+  //Z  I2C1->ICR = I2C_ICR_STOPCF;
 
 }
 
