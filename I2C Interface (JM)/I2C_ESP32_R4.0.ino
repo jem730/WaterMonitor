@@ -1,6 +1,6 @@
 // ---------------------------- Module Description ----------------------------
 //
-// Module Name: I2C Slave Handler
+// Module Name: I2C Peripheral Handler
 // Description: This module configures the ESP32 as an I2C slave device. It
 //              allows the ESP32 to receive data from an I2C master device
 //              and optionally respond with data when requested.
@@ -10,7 +10,7 @@
 // SCL_PIN: GPIO20 - I2C clock line
 //
 // ----------------------------- I2C Parameters -------------------------------
-// I2C_DEV_ADDR: 0x51 - The 7-bit I2C slave address for the ESP32
+// I2C_DEV_ADDR: 0x51 - The 7-bit I2C peripheral address for the ESP32
 //
 // ----------------------------- Buffer Details -------------------------------
 // rxBuffer: A volatile buffer (size 32 bytes) that stores received data.
@@ -26,7 +26,7 @@
 //    - Sends the contents of the rxBuffer back to the master.
 //
 // 3. setup():
-//    - Initializes I2C as a slave with a specified address.
+//    - Initializes I2C as a peripheral with a specified address.
 //    - Configures interrupt handlers for data receive and request events.
 //
 // 4. loop():
