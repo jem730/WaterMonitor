@@ -108,7 +108,7 @@ void loop() {
         int distance = getSDist();
 
         // Format the distance as a string to send over LoRa
-        sprintf(txpacket, "Distance: %d cm", distance);
+        sprintf(txpacket, "%d", distance);
 
         // Log the packet to Serial for debugging
         Serial.printf("\r\nSending packet: \"%s\", length: %d\r\n", txpacket, strlen(txpacket));
